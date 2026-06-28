@@ -1,0 +1,57 @@
+.section {
+  padding-block: var(--section-pad);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 0.85fr;
+  gap: clamp(2.5rem, 6vw, 6rem);
+  align-items: center;
+}
+
+.title {
+  margin-top: 1.25rem;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 300;
+}
+
+.lead {
+  margin-top: 2rem;
+  font-size: 1.2rem;
+  color: var(--text);
+}
+
+.body {
+  margin-top: 1.5rem;
+  color: var(--text-muted);
+  max-width: 52ch;
+}
+
+.signature {
+  margin-top: 2.5rem;
+  font-family: var(--font-display), serif;
+  font-style: italic;
+  font-size: 1.15rem;
+  color: var(--gold);
+}
+
+.media {
+  position: relative;
+}
+
+.image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border: 1px solid var(--line);
+}
+
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .media {
+    order: -1;
+  }
+}

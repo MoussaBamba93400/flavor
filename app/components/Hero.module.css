@@ -1,0 +1,138 @@
+.hero {
+  position: relative;
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.media {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.image {
+  object-fit: cover;
+  animation: slowZoom 18s ease-out forwards;
+}
+
+@keyframes slowZoom {
+  from {
+    transform: scale(1.08);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+.scrim {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(to top, rgba(12, 10, 9, 0.95) 0%, rgba(12, 10, 9, 0.2) 45%, rgba(12, 10, 9, 0.55) 100%);
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+  max-width: 720px;
+}
+
+.eyebrow {
+  margin-bottom: 1.5rem;
+  animation: rise 1s ease both;
+}
+
+.title {
+  font-size: clamp(3.5rem, 12vw, 8rem);
+  font-weight: 300;
+  letter-spacing: 0.02em;
+  line-height: 0.95;
+  animation: rise 1.1s ease 0.1s both;
+}
+
+.subtitle {
+  margin-top: 1.5rem;
+  max-width: 30ch;
+  font-size: clamp(1.05rem, 2vw, 1.35rem);
+  font-weight: 300;
+  color: var(--text);
+  animation: rise 1.1s ease 0.25s both;
+}
+
+.cta {
+  display: inline-block;
+  margin-top: 2.5rem;
+  padding: 1rem 2.5rem;
+  border: 1px solid var(--gold);
+  border-radius: 999px;
+  color: var(--gold);
+  font-size: 0.8rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  transition:
+    background-color 0.4s ease,
+    color 0.4s ease,
+    transform 0.4s ease;
+  animation: rise 1.1s ease 0.4s both;
+}
+
+.cta:hover {
+  background-color: var(--gold);
+  color: var(--bg);
+  transform: translateY(-2px);
+}
+
+.scroll {
+  position: absolute;
+  bottom: 2.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+  width: 1px;
+  height: 64px;
+  background: var(--line);
+  overflow: hidden;
+}
+
+.scroll span {
+  position: absolute;
+  inset: 0;
+  background: var(--gold);
+  animation: scrollLine 2.4s ease-in-out infinite;
+}
+
+@keyframes scrollLine {
+  0% {
+    transform: translateY(-100%);
+  }
+  50% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(100%);
+  }
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .image,
+  .eyebrow,
+  .title,
+  .subtitle,
+  .cta,
+  .scroll span {
+    animation: none;
+  }
+}

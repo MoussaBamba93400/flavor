@@ -1,0 +1,158 @@
+.section {
+  padding-block: var(--section-pad);
+  background-color: var(--bg-elevated);
+  border-top: 1px solid var(--line);
+}
+
+.inner {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: clamp(2.5rem, 6vw, 6rem);
+  align-items: start;
+}
+
+.title {
+  margin-top: 1rem;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 300;
+}
+
+.note {
+  margin-top: 1.5rem;
+  color: var(--text-muted);
+  max-width: 40ch;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr;
+  gap: 1rem;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.field label {
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.field input,
+.field select,
+.field textarea {
+  background: var(--bg);
+  border: 1px solid var(--line);
+  color: var(--text);
+  padding: 0.85rem 1rem;
+  font-family: inherit;
+  font-size: 0.95rem;
+  border-radius: 2px;
+  transition: border-color 0.3s ease;
+}
+
+.field input:focus,
+.field select:focus,
+.field textarea:focus {
+  outline: none;
+  border-color: var(--gold);
+}
+
+.field textarea {
+  resize: vertical;
+}
+
+/* dark date/time picker icon */
+.field input[type="date"],
+.field input[type="time"] {
+  color-scheme: dark;
+}
+
+.submit {
+  margin-top: 0.5rem;
+  align-self: flex-start;
+  padding: 1rem 2.5rem;
+  background: var(--gold);
+  color: var(--bg);
+  border: 1px solid var(--gold);
+  border-radius: 999px;
+  font-size: 0.8rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  transition:
+    background-color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.submit:hover {
+  background: var(--gold-bright);
+  transform: translateY(-2px);
+}
+
+.confirm {
+  border: 1px solid var(--line);
+  padding: clamp(2rem, 5vw, 3.5rem);
+  text-align: center;
+  background: var(--bg);
+}
+
+.check {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: 1px solid var(--gold);
+  color: var(--gold);
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.confirmTitle {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.confirm p {
+  color: var(--text-muted);
+  max-width: 42ch;
+  margin: 0 auto;
+}
+
+.reset {
+  margin-top: 2rem;
+  background: none;
+  border: 1px solid var(--line);
+  color: var(--gold);
+  padding: 0.75rem 1.75rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  transition: border-color 0.3s ease;
+}
+
+.reset:hover {
+  border-color: var(--gold);
+}
+
+@media (max-width: 880px) {
+  .inner {
+    grid-template-columns: 1fr;
+  }
+
+  .row {
+    grid-template-columns: 1fr 1fr;
+  }
+}
